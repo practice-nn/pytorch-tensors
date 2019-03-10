@@ -1,8 +1,9 @@
 #%%
 import pandas as pd
+import numpy as np
 
 #%%
-automobile_data = pd.read_csv('C:/Users/pcuci/Downloads/pytorch-building-deep-learning-models/datasets/Automobile_data.csv', sep=r'\s*,\s*', engine='python')
+automobile_data = pd.read_csv('./data/Automobile_data.csv', sep=r'\s*,\s*', engine='python')
 
 #%%
 automobile_data.head()
@@ -111,24 +112,27 @@ print("Predicted price of automible is: ", int(y_pred.item()))
 print("Actual price of automible is: ", int(y_test.iloc[23]))
 
 #%%
-# now run predictions on the entire test dataset
-y_pred_tensor = model(x_test_tensor)
-y_pred = y_pred_tensor.detach().numpy() # for visualisation
-plt.scatter(y_pred, y_test.values)
-plt.xlabel("Actual Price")
-plt.ylabel("Predicted Price")
-plt.show()
+if False:
+    #%%
+    # now run predictions on the entire test dataset
+    y_pred_tensor = model(x_test_tensor)
+    y_pred = y_pred_tensor.detach().numpy() # for visualisation
+    plt.scatter(y_pred, y_test.values)
+    plt.xlabel("Actual Price")
+    plt.ylabel("Predicted Price")
+    plt.show()
 
-#%%
-# serialize the model to disk
-torch.save(model, 'my_model')
-saved_model = torch.load('my_model')
-y_pred_tensor = saved_model(x_test_tensor)
-y_pred = y_pred_tensor.detach().numpy()
-plt.figure(figsize=(15, 6))
-plt.plot(y_pred, label='Predicted Price')
-plt.plot(y_test.values, label='Actual Price')
-plt.legend()
-plt.show()
+    #%%
+    # serialize the model to disk
+    torch.save(model, 'my_model')
+    saved_model = torch.load('my_model')
+    y_pred_tensor = saved_model(x_test_tensor)
+    y_pred = y_pred_tensor.detach().numpy()
+    plt.figure(figsize=(15, 6))
+    plt.plot(y_pred, label='Predicted Price')
+    plt.plot(y_test.values, label='Actual Price')
+    plt.legend()
+    plt.show()
+
 
 #%%

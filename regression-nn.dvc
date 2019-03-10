@@ -1,0 +1,6 @@
+cmd: python code/regression-nn.py
+deps:
+- md5: f5808906349d7d3d7de643bf22d5d47a
+  path: data/Automobile_data.csv
+md5: 09b52f0e9a53361197afa1991d438c0e
+wdir: .

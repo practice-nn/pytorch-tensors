@@ -1,0 +1,10 @@
+deps:
+- md5: 3a5b15643c81c4965ce960a1620bc40b
+  path: gs://practice-nn/pytorch-tensors/data/Automobile_data.csv
+md5: 4c14d844a2b2130b0c2bf9340b7fa967
+outs:
+- cache: true
+  md5: f5808906349d7d3d7de643bf22d5d47a
+  metric: false
+  path: data/Automobile_data.csv
+wdir: .
