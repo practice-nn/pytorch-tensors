@@ -42,7 +42,7 @@ pypiwin32==223
 python-dateutil==2.7.5
 pytz==2018.7
 pywin32==224
-PyYAML==3.13
+PyYAML==5.4
 requests==2.21.0
 rsa==4.0
 schema==0.7.0
